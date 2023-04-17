@@ -46,3 +46,5 @@ Função para consulta de repositório: Como não sei a quantidade de repositór
 jackson.databind.exc.InvalidDefinitionException: No serializer found for class KontHub.demo.Models.Repository and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (via reference chain: org.springframework.data .domain.PageImpl["content"]->java.util.Collections$UnmodifiableRandomAccessList[0]
 
 Aparentemente o Jackson não conseguiu encontrar o serializador para a classe Repositório. Para resolver o problema eu criei um serializador para a classe repositório. Criei a classe RepositorioBeanSerializerModifier estendendo o BeanSerializerModifier. O BeanSerializerModifier verifica se a classe em questão é um repositorio, se for ele retorna uma instancia do serializador, no meu caso “RepositorioSerializer” Este RepositorioSerializer define como você deseja serializar os atributos do seu objeto.
+
+Vídeo de demostração do projeto: https://youtu.be/4ms6gPVaakI
